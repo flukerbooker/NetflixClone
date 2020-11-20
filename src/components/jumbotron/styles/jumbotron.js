@@ -11,7 +11,7 @@ export const Item = styled.div`
 export const Inner = styled.div`
     display: flex;
     align-items: center;
-    flex-direction: ${({direction}) => direction};
+    flex-direction: ${({ direction }) => direction};
     justify-conent: space-between;
     max-width: 1100 px;
     margin: auto;
@@ -42,7 +42,7 @@ export const Title = styled.h1`
 `;
 
 export const SubTitle = styled.h2`
-    font-size: 26px;
+    font-size: 22px;
     font-weigth: normal;
     line-height: normal;
 
@@ -58,4 +58,10 @@ export const Image = styled.img`
     margin: 0 auto;
 `;
 
-export const Container = styled.div``;
+export const Container = styled.div`
+    @media (max-width: 1000px){
+        ${Item}:last-of-type h2{
+            margin-bottom: 50px;
+        }
+    }
+`;
