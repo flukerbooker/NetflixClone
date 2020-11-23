@@ -1,24 +1,46 @@
 import React from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
-import { Home, Browse, SignIn, SignOut} from './pages'
+import { BrowserRouter as Router, Switch } from 'react-router-dom';
+import { Home, Browse, SignIn, SignUp } from './pages'
 import * as ROUTES from './constants/routes';
+import { IsUserRedirect, ProtectedRoute } from './helper/routes';
 
-function App () {
-  return ( 
-  <Router>
-    <Route exact path="/browse">
-      <Browse/>
-    </Route>
-    <Route exact path="/SignIn">
-      <SignIn/>
-    </Route>
-    <Route exact path="/SignOut">
-      <SignOut/>
-    </Route>
-    <Route exact path={ROUTES.HOME}>
-      <Home />
-    </Route>
-  </Router>
+function App() {
+  const user = null;
+  return (
+    <Router>
+      <Switch>
+        <IsUserRedirect
+          user={user}
+          loggedInPath={ROUTES.BROWSE}
+          path={ROUTES.SIGN_IN}
+          exact
+        >
+          <SignIn />
+        </IsUserRedirect>
+        <IsUserRedirect
+          user={user}
+          loggedInPath={ROUTES.BROWSE}
+          path={ROUTES.SIGN_UP}
+          exact
+        >
+          <SignUp />
+        </IsUserRedirect>
+        <ProtectedRoute
+          user={user}
+          path={ROUTES.BROWSE}
+          exact
+        >
+          <Browse />
+        </ProtectedRoute>
+        <IsUserRedirect
+          user={user}
+          loggedInPath={ROUTES.BROWSE}
+          path={ROUTES.HOME}
+        >
+          <Home />
+        </IsUserRedirect>
+      </Switch>
+    </Router>
   );
 };
 
