@@ -46,7 +46,7 @@ export default function SignUp(){
                     <Form.Title>Sign Up</Form.Title>
                     {error && <Form.Error>{error}</Form.Error>}
 
-                    <Form.Base onSUbmit={handleSignUp} method="POST">
+                    <Form.Base onSubmit={handleSignUp} method="POST">
                         <Form.Input placeholder="First name" value={firstName} onChange={({ target }) => setFirstName(target.value)}/>
                         <Form.Input placeholder="Email address" value={emailAddress} onChange={({ target }) => setEmailAddress(target.value)}/>
                         <Form.Input type="password" placeholder="Password" value={password} onChange={({ target }) => setPassword(target.value)}/>

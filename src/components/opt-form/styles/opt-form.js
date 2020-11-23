@@ -61,7 +61,7 @@ export const Break = styled.p`
     height: 0;
 `;
 
-export const Text = styled.text`
+export const Text = styled.p`
     font-size: 19.2px;
     color: white;
     text-align: center;
