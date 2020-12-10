@@ -7,10 +7,6 @@ export const Background = styled.div`
     background: url(${({src}) => (src ? `../images/misc/$(src).jpg` : '../images/misc/home-bg.jpg')}) top left / cover no-repeat;
 `;
 
-export const Frame = styled.div`
-
-`;
-
 export const Container = styled.div`
     display: flex;
     margin: 0 56px;
