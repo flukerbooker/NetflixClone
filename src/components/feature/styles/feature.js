@@ -5,12 +5,12 @@ export const Container = styled.div`
     flex-direction: column;
     border-bottom: 8px solid #222;
     text-align: center;
-    padding 165px 45px;
+    padding: 165px 45px;
 `;
 
 export const Title = styled.h1`
     color: white;
-    max-weight: 640px;
+    max-width: 640px;
     font-size: 65px;
     font-weight: bold;
     margin: auto;
